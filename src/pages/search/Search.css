@@ -1,0 +1,11 @@
+.search{
+    display: flex;
+}
+
+.search__results{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: space-around;
+    padding: 4rem 0;
+}

@@ -1,0 +1,49 @@
+.header{
+    font-size: 3.2rem; 
+    background-color: #2d313a; 
+    color: white;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 1px 5px 4px #000;
+    width: 100%;
+    font-weight: 700;
+    position: fixed;
+    z-index: 999; 
+    justify-content: space-between;
+}
+.logo{
+    padding: 0 4rem;
+}
+
+.header__nav ul{
+    padding: 0 4rem;
+    display: flex;
+    gap: 1.8rem;
+    list-style: none;
+}
+
+
+.header__nav a{
+    font-size: 1.6rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.header__nav a:active,a:hover{
+    transition: all 0.3s;
+    color: #9ca2ad;
+}
+
+.selected{
+    color: #f08c00 !important; 
+}
+
+
+
+
+
+
+
+

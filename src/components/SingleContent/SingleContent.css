@@ -1,0 +1,52 @@
+.media{
+    position: relative;
+    max-width: 20rem;
+    background-color: #2d313a;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 10px;
+    box-shadow: 1px 0px 3px 3px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+
+.media:hover{
+    transform: translateY(-1px);
+    background-color: rgb(235, 233, 233);
+    color: #39445a;
+
+}
+
+.media:hover .movie__info__title{
+    color: #39445a;
+}
+
+.poster{
+    max-width: 100%;
+    border-radius: 12px;
+}
+
+.movie__info{
+    padding: 6px 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.movie__info__title{
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #d7dade; 
+    text-decoration: underline;
+    letter-spacing: 0.8px;
+}
+
+.movie__info__subtitle{
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+    color: #61697b;
+}
