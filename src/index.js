@@ -3,13 +3,15 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-
+import CustomModal from './components/CustomModal/CustomModal';
+import ModalProvider from './context/modal-context';
 ReactDOM.render(
-  <React.StrictMode>
+  <ModalProvider>
     <BrowserRouter>
       <App />
+      <CustomModal />
     </BrowserRouter>
-  </React.StrictMode>
+  </ModalProvider>
   ,
   document.getElementById('root')
 );

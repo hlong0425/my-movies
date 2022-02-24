@@ -108,7 +108,7 @@ const Search = function (props) {
                 </Tabs>
             </ThemeProvider>
 
-            <div class='search__results'>
+            <div className='search__results'>
                 {displayContent}
             </div>
 

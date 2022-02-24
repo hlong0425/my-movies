@@ -12,7 +12,7 @@ const Header = function () {
             <div className="logo" onClick={scrollToHeadHandler}>MY-MOVIES 🎬</div>
             <div className='header__nav'>
                 <ul>
-                    <NavLink to='/trending' activeClassName="selected">Home</NavLink>
+                    <NavLink to='/'>Home</NavLink>
                     <NavLink activeClassName="selected" to='/movies'>Movies</NavLink>
                     <NavLink activeClassName="selected" to='/series'>TV Series</NavLink>
                     <NavLink activeClassName="selected" to='/search'>Search</NavLink>
