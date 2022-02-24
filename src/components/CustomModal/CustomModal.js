@@ -32,6 +32,7 @@ export default function CustomModal() {
     const modalCtx = useContext(modalContext);
 
     const { open, content, video, closeModalHandler, carouselAtt } = modalCtx;
+    console.log(content)
 
     return (
         <div>

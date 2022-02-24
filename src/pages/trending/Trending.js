@@ -39,9 +39,6 @@ const Trending = function () {
 
 
     return <div>
-        <span className="pageTitle">
-            Trending movies
-        </span>
         <div className="trending">
             {displayContent}
         </div>

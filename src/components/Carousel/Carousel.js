@@ -9,18 +9,19 @@ import './Carousel.css';
 const handleDragStart = (e) => e.preventDefault();
 
 const Carousel = ({ id, media_type }) => {
+    console.log(id, media_type);
     const [credits, setCredits] = useState([]);
     const responsiveOption = {
         0: { items: 2 },
         568: { items: 3 },
         1024: { items: 5 },
     }
-    const fetchCredits = useCallback(async () => {
+    const fetchCredits = async () => {
         const { data } = await axios.get(
             `https://api.themoviedb.org/3/${media_type}/${id}/credits?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
         );
         setCredits(data.cast);
-    }, [id, media_type])
+    }
 
 
     const items = credits.map(c => (
@@ -35,9 +36,8 @@ const Carousel = ({ id, media_type }) => {
     ))
 
     useEffect(() => {
-
         fetchCredits();
-    }, [fetchCredits])
+    }, [])
 
     return (
         <AliceCarousel

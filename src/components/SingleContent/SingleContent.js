@@ -6,12 +6,13 @@ import { useContext } from "react";
 
 const SingleContent = (props) => {
     const ModalCtx = useContext(modalContext);
+
     const movieDetailHandler = () => {
         ModalCtx.openModalHandler(props.id, props.media_type);
     }
     return (
         <Badge badgeContent={props.vote_average} color={props.vote_average > 6 ? 'primary' : 'secondary'}>
-            <div onClick={movieDetailHandler.bind(props.id)} className="media">
+            <div onClick={movieDetailHandler} className="media">
                 <img
                     className="poster"
                     src={props.poster ? `${img_300}/${props.poster}` : unavailable}

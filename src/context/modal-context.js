@@ -17,7 +17,7 @@ export const modalContext = createContext({
 
 const ModalProvider = (props) => {
     const [open, setOpen] = useState(false);
-    const [content, setContent] = useState([]);
+    const [content, setContent] = useState({});
     const [video, setVideo] = useState();
     const [carouselAtt, setCarouselAtt] = useState({});
 
@@ -25,7 +25,9 @@ const ModalProvider = (props) => {
         const { data } = await axios.get(
             `https://api.themoviedb.org/3/${media_type}/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
         );
-        setContent(data);
+
+        console.log(data);
+        setContent(pre => ({ ...pre, ...data }));
     };
 
 
@@ -37,7 +39,7 @@ const ModalProvider = (props) => {
     };
 
     const openModalHandler = function (id, media_type) {
-        setCarouselAtt({ id, media_type });
+        setCarouselAtt(pre => ({ ...pre, id, media_type }));
         fetchData(id, media_type);
         fetchVideo(id, media_type);
         setOpen(true);

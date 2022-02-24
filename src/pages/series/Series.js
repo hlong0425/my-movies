@@ -48,7 +48,7 @@ const Movie = function () {
 
 
     return <div>
-        <div className="pageTitle">Movies</div>
+        <div className="pageTitle">Series Movie</div>
 
         <Genres
             type='tv'
