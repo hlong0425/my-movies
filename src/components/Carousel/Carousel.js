@@ -9,7 +9,7 @@ import './Carousel.css';
 const handleDragStart = (e) => e.preventDefault();
 
 const Carousel = ({ id, media_type }) => {
-    console.log(id, media_type);
+
     const [credits, setCredits] = useState([]);
     const responsiveOption = {
         0: { items: 2 },

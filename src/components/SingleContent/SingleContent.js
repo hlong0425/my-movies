@@ -8,6 +8,7 @@ const SingleContent = (props) => {
     const ModalCtx = useContext(modalContext);
 
     const movieDetailHandler = () => {
+        console.log(props.id, props.media_type);
         ModalCtx.openModalHandler(props.id, props.media_type);
     }
     return (

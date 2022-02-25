@@ -21,9 +21,9 @@ const Movie = function () {
         setIsLoading(true);
         setErr(null);
         try {
-            const { data, status } = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page.current}&with_genres=${genreforURL}`);
+            const { data } = await axios.get(`https://api.themoviedb.org/3/discover/movie?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page.current}&with_genres=${genreforURL}`);
 
-            setContent(data.results);
+            setContent([...data.results]);
             setPage(prePageState => {
                 return { ...prePageState, total: data.total_pages }
             })
@@ -55,7 +55,7 @@ const Movie = function () {
                 {content.map(c => (
                     <SingleContent
                         key={c.id} id={c.id} poster={c.poster_path} title={c.title || c.name} date={c.first_air_date || c.release_date}
-                        media_type={c.media_type}
+                        media_type={'movie'}
                         vote_average={c.vote_average}
                     />
                 ))}

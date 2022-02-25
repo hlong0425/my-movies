@@ -4,21 +4,22 @@ import axios from "axios";
 
 
 export const modalContext = createContext({
-    id: '',
     open: false,
     openModalHandler: (id) => { },
     closeModalHandler: () => { },
     carouselAtt: {
         id: '',
         media_type: '',
-    }
+    },
+    content: {},
+    video: '',
 })
 
 
 const ModalProvider = (props) => {
     const [open, setOpen] = useState(false);
     const [content, setContent] = useState({});
-    const [video, setVideo] = useState();
+    const [video, setVideo] = useState('');
     const [carouselAtt, setCarouselAtt] = useState({});
 
     const fetchData = async (id, media_type) => {
@@ -26,8 +27,7 @@ const ModalProvider = (props) => {
             `https://api.themoviedb.org/3/${media_type}/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`
         );
 
-        console.log(data);
-        setContent(pre => ({ ...pre, ...data }));
+        setContent(pre => ({ ...data }));
     };
 
 

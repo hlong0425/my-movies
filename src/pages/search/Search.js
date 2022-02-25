@@ -69,7 +69,7 @@ const Search = function (props) {
     if (content.length > 0) {
         displayContent = content.map(c => <SingleContent
             key={c.id} id={c.id} poster={c.poster_path} title={c.title || c.name} date={c.first_air_date || c.release_date}
-            media_type={c.media_type}
+            media_type={type ? 'tv' : 'movie'}
             vote_average={c.vote_average}
         />)
     }
